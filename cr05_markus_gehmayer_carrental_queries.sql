@@ -74,14 +74,14 @@ INNER JOIN `Account` ON fk_account_id = acount_id
 INNER JOIN `User` ON fk_usr_id = usr_id
 WHERE milage_driven = 200;
 
--- returns demage name when demage occured with user name and so on.. :
-SELECT usr_id, usr_first_name, usr_last_name, report_id, demage, demage_name
+-- returns damage name when demage occured with user name and so on.. :
+SELECT usr_id, usr_first_name, usr_last_name, report_id, damage, damage_name
 FROM `report`
 INNER JOIN `Contract` ON fk_contract_id = Contract_id
 INNER JOIN `Inquiry` ON fk_inq_id = inq_id
 INNER JOIN `Account` ON fk_account_id = acount_id
 INNER JOIN `User` ON fk_usr_id = usr_id
-WHERE demage = 1;
+WHERE damage = 1;
 
 --returns  payment dates and payment amount for User:
 SELECT usr_id, usr_first_name, usr_last_name, first_payment, first_payment_amount

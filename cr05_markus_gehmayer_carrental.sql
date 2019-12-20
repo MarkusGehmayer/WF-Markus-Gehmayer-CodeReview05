@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Erstellungszeit: 19. Dez 2019 um 21:56
+-- Erstellungszeit: 20. Dez 2019 um 11:08
 -- Server-Version: 10.4.10-MariaDB
 -- PHP-Version: 7.3.12
 
@@ -43,8 +43,8 @@ CREATE TABLE `account` (
 INSERT INTO `account` (`acount_id`, `fk_usr_id`, `fk_payment_id`, `fk_admin_id`, `account_created`) VALUES
 (1, 1, 3, 2, '2019-01-07'),
 (2, 2, 2, 1, '2019-02-07'),
-(3, 3, 2, 4, '2019-03-07'),
-(4, 4, 3, 5, '2019-04-07');
+(3, 3, 2, 1, '2019-03-07'),
+(4, 4, 4, 4, '2019-04-07');
 
 -- --------------------------------------------------------
 
@@ -166,10 +166,10 @@ CREATE TABLE `inquiry` (
 --
 
 INSERT INTO `inquiry` (`inq_id`, `fk_account_id`, `fk_car_id`, `usr_pick_up_date`, `usr_drop_off_date`, `fk_start_loc_id`, `fk_end_loc_id`) VALUES
-(1, 1, 2, '2019-03-23', '2019-03-30', 1, 2),
-(2, 2, 3, '2019-02-23', '2019-02-25', 2, 1),
-(3, 3, 3, '2019-05-18', '2019-05-22', 1, 2),
-(4, 4, 5, '2019-06-07', '2019-06-13', 2, 1);
+(1, 1, 1, '2019-03-23', '2019-03-30', 1, 2),
+(2, 2, 2, '2019-02-23', '2019-02-25', 2, 1),
+(3, 3, 3, '2019-05-18', '2019-05-22', 1, 4),
+(4, 4, 4, '2019-06-07', '2019-06-13', 2, 3);
 
 -- --------------------------------------------------------
 
@@ -253,15 +253,15 @@ CREATE TABLE `report` (
   `milage_total` int(11) DEFAULT NULL,
   `milage_driven` int(11) DEFAULT NULL,
   `date_returned` date DEFAULT NULL,
-  `demage` tinyint(1) DEFAULT NULL,
-  `demage_name` varchar(55) DEFAULT NULL
+  `damage` tinyint(1) DEFAULT NULL,
+  `damage_name` varchar(55) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Daten für Tabelle `report`
 --
 
-INSERT INTO `report` (`report_id`, `fk_contract_id`, `fk_loc_id`, `milage_total`, `milage_driven`, `date_returned`, `demage`, `demage_name`) VALUES
+INSERT INTO `report` (`report_id`, `fk_contract_id`, `fk_loc_id`, `milage_total`, `milage_driven`, `date_returned`, `damage`, `damage_name`) VALUES
 (1, 2, 3, 22000, 456, '2019-05-06', 0, 'none'),
 (2, 1, 4, 23000, 200, '2019-02-21', 1, 'little crash'),
 (3, 3, 1, 27000, 999, '2019-06-30', 0, 'none');
@@ -314,7 +314,7 @@ INSERT INTO `user` (`usr_id`, `usr_first_name`, `usr_last_name`, `usr_birth_date
 (1, 'Mex', 'Power', '1990-11-11', 'Somewhere 34', 'Austria', 'mexpower@gmail.com', 2147483647),
 (2, 'Lina', 'Bauer', '1967-11-21', 'Somewhere 34', 'Austria', 'lina@gmail.com', 2147483647),
 (3, 'Alex', 'Dummy', '1969-05-01', 'Somewhere 12', 'Germany', 'alexdummy@email.com', 676234567),
-(4, 'Gustav', 'Gans', '1930-01-01', 'Disneyland', 'Space', 'gustav@gans.com', 680987654),
+(4, 'Gustav', 'Gans', '1930-01-01', 'Disneyland', 'Nimmerland', 'gustav@gans.com', 680987654),
 (5, 'Hermine', 'Granger', '1989-03-01', 'London', 'Great Britain', 'hermine@granger.mail.com', 0);
 
 --
